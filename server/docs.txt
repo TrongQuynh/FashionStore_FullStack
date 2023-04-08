@@ -1,0 +1,29 @@
+[
+    {
+        "ID": "123",
+        "code": "AK0016-09",
+        "name": "Áo Khoác Wind Easy Wear",
+        "rate": 5,
+        "price": 390000,
+        "slug": "giay-neon-tone-colorful-string",
+        "collection": "ao-khoac",
+        "sale": 0,
+        "types": [
+            {
+                "color": "Xanh",
+                "sizes": [
+                    {
+                        "size": "x",
+                        "quantity": 10
+                    }
+                ],
+                "image": "https://product.hstatic.net/1000026602/product/giay_mau_hcn_ed3486a9da464c05a0b95e1f70cdce0c_thumb.jpg"
+            }
+        ],
+        "images":[
+            "https://product.hstatic.net/1000026602/product/giay_mau_hcn_ed3486a9da464c05a0b95e1f70cdce0c_thumb.jpg",
+            "https://product.hstatic.net/1000026602/product/giay_mau_hcn_ed3486a9da464c05a0b95e1f70cdce0c_thumb.jpg",
+            "https://product.hstatic.net/1000026602/product/giay_mau_hcn_ed3486a9da464c05a0b95e1f70cdce0c_thumb.jpg"
+        ]
+    }
+]

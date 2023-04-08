@@ -1,0 +1,29 @@
+.imgCard{
+    height: 280px;
+    max-height: 280px;
+}
+
+.imgSmall{
+    width: 21px;
+    height: 28px;
+    max-width: 21px;
+    max-height: 28px;
+}
+
+.productPrice{
+    text-align: left;
+}
+
+.productCard{
+    max-width: 15rem;
+    max-height: 470px;
+    height: 470px;
+}
+
+.productCardBody{
+    padding-top: 0;
+}
+
+.productLink{
+    text-decoration: none;
+}

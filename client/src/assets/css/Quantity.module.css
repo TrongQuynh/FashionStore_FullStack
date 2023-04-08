@@ -1,0 +1,27 @@
+.amount_box{
+    position: relative;
+    background-color: aqua;
+}
+
+.txt_amount{
+    width: 100%;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    padding-left: 3.5rem;
+    z-index: 0;
+}
+
+.btn_decrease,.btn_increase{
+    position: absolute;
+    width: 2.3rem;
+}
+
+.btn_decrease{
+    left: 0;
+    z-index: 1;
+}
+
+.btn_increase{
+    right: 0;
+}

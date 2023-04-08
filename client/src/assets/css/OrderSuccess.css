@@ -1,0 +1,61 @@
+
+.order_success_box{
+    max-width: 45rem;
+    margin: auto;
+}
+.order_success_box .icon{
+    font-size: 5rem !important;
+}
+
+.order_success_box .header{
+    font-weight: 600;
+    font-style: italic;
+    border-bottom: 3px solid;
+    text-align: left;
+    margin-bottom: 1.5rem;
+}
+
+.order_success_box .fullAddress,.username{
+    text-align: left;
+    padding-left: 0;
+}
+
+.order_success_box .row{
+    margin-bottom: 1rem;
+}
+
+.order_success_box .addressList{
+    margin-top: 1rem;
+    padding-left: 0;
+    text-align: left;
+    list-style: none;
+    position: relative;
+}
+
+.order_success_box .addressList li{
+    margin-bottom: 1rem;
+}
+
+.order_success_box .addressList span{
+    /* margin-left: 2rem; */
+    position: absolute;
+    left: 10rem;
+}
+
+.order_success_box .totalMoney{
+    text-align: right;
+    font-weight: 600;
+    font-size: 25px;
+    font-style: italic;
+}
+
+.order_success_box .btn_Back{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: .1rem;
+    font-style: italic;
+    padding: 1rem 0;
+}

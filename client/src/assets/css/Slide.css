@@ -1,0 +1,15 @@
+.carousel-indicators > button{
+    border: 1px solid black !important;
+}
+
+.carousel-indicators > button.active{
+    background-color: black;
+}
+
+.carousel-control-prev > span,.carousel-control-next> span{
+    color: black;
+}
+
+.slide-img{
+    max-height: 418px;
+}

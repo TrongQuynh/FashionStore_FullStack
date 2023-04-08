@@ -1,0 +1,2 @@
+Product Slide
+ -- https://github.com/akiran/react-slick
