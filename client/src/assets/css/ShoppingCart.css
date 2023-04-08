@@ -75,10 +75,19 @@
 .product_list .btn_modifie{
     display: flex;
     justify-content: space-between;
+    
 }
 
 .product_list .btn_modifie button{
     width: 5rem;
+    border: none;
+    background-color: black;
+    color: #EBEBEB;
+}
+
+.product_list .btn_modifie button:hover{
+    background-color: #EBEBEB;
+    color: #000;
 }
 
 .product_list .size_and_color{

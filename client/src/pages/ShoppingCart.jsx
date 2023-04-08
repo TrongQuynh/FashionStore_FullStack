@@ -34,10 +34,14 @@ function ShoppingCart() {
     }, []);
 
     const totalMoney = useMemo(()=>{
-        
-        return productCarts.length > 0 ? productCarts.reduce(function(pre,current){
-            return (pre.price * pre.quantity) + (current.price * current.quantity);
-        }) : 0;
+        let result = 0;
+        for(let product of productCarts){
+            result += (product.price * product.quantity)
+        }
+        return result;
+        // return productCarts.length > 0 ? productCarts.reduce(function(pre,current){
+        //     return (pre.price * pre.quantity) + (current.price * current.quantity);
+        // }) : 0;
     },[productCarts]);
 
     async function onHandleQuantity(productCartID, quantity) {

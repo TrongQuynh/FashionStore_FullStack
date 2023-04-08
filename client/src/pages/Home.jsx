@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 
 import HomePageTab from '../components/HomePageTab';
 import ProductCollection from '../components/ProductCollection';
+import Loading from '../components/Loading';
 
 function Home() {
     const [collection,setCollection] = useState([]);
@@ -34,11 +35,14 @@ function Home() {
 
             <div className="main mt-5">
                 <Container>
-
+                    
                     {
+                        collection.length > 0 ?
                         collection.map(function(value,index){
                             return <ProductCollection {...value} key={index}/>;
                         })
+                        :
+                        <Loading/>
                     }
 
                     

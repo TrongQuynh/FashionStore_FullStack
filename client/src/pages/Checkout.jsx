@@ -53,10 +53,14 @@ function Checkout() {
     }, []);
 
     const totalMoney = useMemo(() => {
-
-        return productCarts.length > 0 ? productCarts.reduce(function (pre, current) {
-            return (pre.price * pre.quantity) + (current.price * current.quantity);
-        }) : 0;
+        let result = 0;
+        for(let product of productCarts){
+            result += (product.price * product.quantity)
+        }
+        return result;
+        // return productCarts.length > 0 ? productCarts.reduce(function (pre, current) {
+        //     return (pre.price * pre.quantity) + (current.price * current.quantity);
+        // }) : 0;
     }, [productCarts]);
 
     async function onHandleDeleteAllProductInCart() {
@@ -84,7 +88,7 @@ function Checkout() {
                         "products": productCarts.map((product) => (
                             {
                                 "productCode": product.productCode, "quantity": product.quantity, "size": product.size,
-                                "color": product.color
+                                "color": product.color,"price" : product.price
                             }
                         ))
                         ,
@@ -109,7 +113,12 @@ function Checkout() {
         );
 
         // return;
-
+        if(username.length ==0 || phonenumber.length != 10 
+            || addressDetail.length == 0,
+            district.length == 0 || province.length == 0 || ward.length == 0){
+            window.alert("Please Fill Data");
+            return;
+        }
         let res = await fetch(`${process.env.REACT_APP_DOMAIN_NAME}/api/order`, {
             method: 'POST',
             headers: {
@@ -125,7 +134,7 @@ function Checkout() {
                         "products": productCarts.map((product) => (
                             {
                                 "productCode": product.productCode, "quantity": product.quantity, "size": product.size,
-                                "color": product.color
+                                "color": product.color, "price" : product.price
                             }
                         ))
                         ,
@@ -268,9 +277,9 @@ function Checkout() {
                                         </select>
                                         <input className="billing_address_1" name="" type="hidden" value="" />
                                     </div>
-                                    <div className="row">
+                                    {/* <div className="row">
                                         <input className="field" type="text" placeholder="Email" id="email" />
-                                    </div>
+                                    </div> */}
                                     <div className="row">
                                         <textarea className="field" placeholder="Nội dung" name="" id="billing_note" onChange={(e) => { setNote(e.target.value) }}></textarea>
                                     </div>
@@ -390,7 +399,7 @@ function Checkout() {
                                         ""
                                 }
 
-                                <tr className="product" data-product-id="1419">
+                                {/* <tr className="product" data-product-id="1419">
                                     <td className="product-image">
                                         <a href="" target="_blank">
                                             <div className="product-thumbnail">
@@ -409,7 +418,7 @@ function Checkout() {
                                     <td className="product-price">
                                         <span className="order-summary-emphasis">1,200,000 đ</span>
                                     </td>
-                                </tr>
+                                </tr> */}
                             </tbody>
                         </table>
                     </div>

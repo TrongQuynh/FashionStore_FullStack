@@ -9,6 +9,7 @@ import Container from 'react-bootstrap/Container';
 import React, { useEffect, useState } from 'react'
 import SlideProduct from '../components/SlideProduct';
 import InfoProduct from '../components/InfoProduct';
+import Loading from '../components/Loading';
 
 function ProductDetail() {
     const [userID, setUserID] = useState("u_19841");
@@ -48,6 +49,7 @@ function ProductDetail() {
         let data = await res.json();
         console.log(data);
         if (data.status != 200) return;
+        window.alert("Add Success");
     }
 
 
@@ -55,12 +57,14 @@ function ProductDetail() {
         <div>
             <Header />
             <Container>
-                <Row>
+                {
+                    product ? 
+                    <Row>
                     <Col xs={7}>
                         {
                             product ?
                                 (<SlideProduct images={[...product.images]} />)
-                                : ""
+                                : <Loading/>
                         }
                     </Col>
                     <Col xs={5}>
@@ -71,6 +75,10 @@ function ProductDetail() {
                         }
                     </Col>
                 </Row>
+                : <Loading/>
+
+                }
+                
             </Container>
         </div>
     )

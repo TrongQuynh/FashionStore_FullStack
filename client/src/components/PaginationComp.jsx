@@ -8,6 +8,9 @@ function PaginationComp(props) {
     if (currentPage > 1) {
         items.push(<Pagination.First key="first" onClick={() => props.onChangePage(1)} />)
         items.push(<Pagination.Prev key="prev" onClick={() => props.onChangePage(currentPage - 1)}></Pagination.Prev>);
+    }else{
+        items.push(<Pagination.First key="first" disabled onClick={() => props.onChangePage(1)} />)
+        items.push(<Pagination.Prev key="prev" disabled onClick={() => props.onChangePage(currentPage - 1)}></Pagination.Prev>);
     }
 
     let page = currentPage > 5 ? currentPage - 3 : 1;
@@ -22,6 +25,10 @@ function PaginationComp(props) {
 
     if (currentPage < totalPage) {
         items.push(<Pagination.Next key="next" onClick={() => props.onChangePage(currentPage + 1)} />);
+        items.push(<Pagination.Last key="last" onClick={() => props.onChangePage(totalPage)}/>)
+    }else{
+        items.push(<Pagination.Next key="next" disabled onClick={() => props.onChangePage(currentPage + 1)} />);
+        items.push(<Pagination.Last key="last" disabled onClick={() => props.onChangePage(totalPage)}/>)
     }
 
     return (

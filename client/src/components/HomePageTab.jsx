@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react'
 import { FaAngleDown } from 'react-icons/fa';
 
 import style from "../assets/css/HomePageTab.module.css";
+import Loading from './Loading';
 function HomePageTab() {
     const [collection, setCollection] = useState([]);
     useEffect(function () {
@@ -29,6 +30,7 @@ function HomePageTab() {
                     <div>
                         <Row>
                             {
+                                collection.length > 0 ?
                                 collection.map(function (album, index) {
                                     if(index > 7) return;
                                     return (
@@ -37,6 +39,8 @@ function HomePageTab() {
                                         </Col>
                                     );
                                 })
+                                :
+                                <Loading/>
                             }
                             <Col xs={12}><h5 className='text-center'>Xem Them <FaAngleDown/></h5></Col>
                         </Row>

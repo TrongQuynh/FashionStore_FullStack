@@ -10,10 +10,10 @@ import React from 'react'
 
 function ProductCollection(data) {
     return (
-        <div className='collection'>
+        <div className={style.collection}>
             <Row className='bg-light mb-2 mt-3'>
                 <Col xs={11}><h3 className={style.header_Collection}>{data.collection}</h3></Col>
-                <Col xs={1}><p className={style.btn_More}><Link to={`/product/${data.collection}`}>More...</Link></p></Col>
+                <Col xs={1}><p><Link className={style.btn_More} to={`/product/${data.collection}`}>More...</Link></p></Col>
             </Row>
 
             <Row>

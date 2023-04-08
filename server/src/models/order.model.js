@@ -17,6 +17,7 @@ const orderSchema = new Schema({
                     productCode: {
                         type: String
                     },
+                    price: Number,
                     quantity: {
                         type: Number,
                         required: true,

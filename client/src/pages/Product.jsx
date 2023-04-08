@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useNavigate, useParams } from 'react-router-dom';
 import PaginationComp from '../components/PaginationComp';
+import Loading from '../components/Loading';
 
 function Product() {
   const [userID, setUserID] = useState("u_19841");
@@ -62,12 +63,17 @@ function Product() {
                   )
                 })
               ) :
-              ""
+              <Loading/>
           }
         </Row>
 
         <div className='text-center'>
-          <PaginationComp currentPage={currentPage} totalPage={totalPage} onChangePage={onHandleChangePage}/>
+          {
+            products.length > 0 ?
+            <PaginationComp currentPage={currentPage} totalPage={totalPage} onChangePage={onHandleChangePage}/>
+            : ""
+          }
+          
         </div>
       </div>
 

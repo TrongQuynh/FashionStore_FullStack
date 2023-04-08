@@ -12,7 +12,7 @@ const Header = () => {
     <div className='header'>
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">Navbar</Navbar.Brand>
+          <Navbar.Brand href="/">TQ</Navbar.Brand>
           <Nav className="justify-content-center">
             <Navbar.Brand href="#home">HanShop</Navbar.Brand>
           </Nav>
@@ -36,7 +36,9 @@ const Header = () => {
         </NavDropdown>
 
         <NavDropdown title="SẢN PHẨM" className={style.collection} id="collection_2">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+          <NavDropdown.Item href="/product/ao-khoac">Ao Khoac</NavDropdown.Item>
+          <NavDropdown.Item href="/product/quan-tay">Quan Tay</NavDropdown.Item>
+          <NavDropdown.Item href="/product/giay-dep">Giay Dep</NavDropdown.Item>
           <NavDropdown.Item href="#action/3.2">
             Another action
           </NavDropdown.Item>
